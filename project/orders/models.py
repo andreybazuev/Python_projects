@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-
 from products.models import Product
 
 
@@ -10,3 +9,4 @@ class SalesOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     products = models.ManyToManyField(Product)
     #account = models.OneToOneField(Product)
+    order_date = models.DateField()
