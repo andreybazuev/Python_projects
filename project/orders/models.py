@@ -1,3 +1,4 @@
+from datetime import date
 from django.contrib.auth.models import User
 from django.db import models
 from products.models import Product
@@ -8,5 +9,4 @@ class SalesOrder(models.Model):
     description = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     products = models.ManyToManyField(Product)
-    #account = models.OneToOneField(Product)
-    order_date = models.DateField()
+    sale_data = models.DateField(default=date.today)
